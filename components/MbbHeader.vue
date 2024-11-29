@@ -24,17 +24,17 @@ const { toggleNav } = useNav()
                 <span
                   id="line"
                   aria-hidden="true"
-                  class="h-0.5 w-5 bg-black d-block"
+                  class="h-0.5 w-5 bg-black block"
                 />
                 <span
                   id="line2"
                   aria-hidden="true"
-                  class="mt-2 h-0.5 w-5 bg-black d-block"
+                  class="mt-2 h-0.5 w-5 bg-black block"
                 />
                 <span
                   id="line2"
                   aria-hidden="true"
-                  class="mt-2 h-0.5 w-5 bg-black d-block"
+                  class="mt-2 h-0.5 w-5 bg-black block"
                 />
               </button>
             </div>

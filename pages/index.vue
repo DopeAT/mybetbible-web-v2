@@ -77,9 +77,9 @@ useHead({
     <hr class="my-5 divide-y-5">
 
     <div class="home-offer-cards">
-      <h1 class="font-semibold text-2xl mb-3">
+      <h2 class="font-semibold text-2xl mb-3">
         Best Casino Bonus Offers 2024
-      </h1>
+      </h2>
       <p class="mb-3">
         Casino bonus offers and free slots are an easy way for players to get an extra edge. There
         are all sorts of bonuses out there, some good, some not so good.
@@ -113,9 +113,9 @@ useHead({
     <hr class="my-5 divide-y-5">
 
     <div class="home-offer-cards">
-      <h1 class="font-semibold text-2xl mb-3">
+      <h2 class="font-semibold text-2xl mb-3">
         Our top Poker Bonus Offers 2024
-      </h1>
+      </h2>
       <p class="mb-3">
         Below you will find the best Poker tables available online. You can claim you free bonus
         offer by simply click on Claim Bonus button and enter the online Poker world.
