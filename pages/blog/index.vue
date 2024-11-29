@@ -52,10 +52,8 @@ useHead({
   ]
 })
 
-useAsyncData(async () => {
-  await offersStore.fetchAllCategories()
-  await blogStore.fetchArticles()
-})
+useAsyncData(async () => await offersStore.fetchAllCategories())
+useAsyncData(async () => await blogStore.fetchArticles())
 </script>
 
 <template>
