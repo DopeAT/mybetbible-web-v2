@@ -10,13 +10,11 @@ const pokerOffers = computed(() => offersStore.getPokerOffers)
 const guideArticles = computed(() => blogStore.homeGuides)
 const bonusArticles = computed(() => blogStore.homeArticles)
 
-useAsyncData(async () => {
-  await offersStore.fetchSport()
-  await offersStore.fetchCasino()
-  await offersStore.fetchPoker()
-  await blogStore.fetchHomeGuides()
-  await blogStore.fetchHomeBonusGuides()
-})
+useAsyncData(async () => await offersStore.fetchSport())
+useAsyncData(async () => await offersStore.fetchCasino())
+useAsyncData(async () => await offersStore.fetchPoker())
+useAsyncData(async () => await blogStore.fetchHomeGuides())
+useAsyncData(async () => await blogStore.fetchHomeBonusGuides())
 
 const { data: faqs } = useAsyncData(async () => {
   const res = await $api.faqs.fetchFaqs()
