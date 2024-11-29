@@ -1,0 +1,426 @@
+// Bookies colors
+$bookies: (
+  'bet365': #126e51,
+  'betway': #000000,
+  'novibet': #303540,
+  '888sport': #f7661d,
+  'coral': #074d8d,
+  'betfair': #f7b234,
+  'gentingbet': #e30e14,
+  'william-hill': #00143c,
+  'tonybet': #4d4d4d,
+  'betvictor': #44b6e5,
+  'bwin': #44b6e5,
+  'unibet': #34a338,
+  'ladbrokes': #f01e28,
+  'paddy-power': #014833,
+  'sportingbet': #0988d1,
+  'betfred': #004990,
+  '10bet': #4e454a,
+  'tipbet': #cc0001,
+  'fansbet': #57a348
+);
+
+@each $key, $value in $bookies {
+  .bg-#{$key} {
+    background: #{$value} !important;
+    border-color: #{$value} !important;
+  }
+
+  .color-#{$key} {
+    color: #{$value} !important;
+  }
+}
+
+
+main {
+  height: 100vh;
+}
+
+body {
+  background: #f8fafc;
+  font-family: "Nunito";
+}
+
+// CUSTOM BREAKPOINTS
+$screen-xxs: 400px;
+$screen-xs: 576px;
+$screen-sm: 768px;
+$screen-md: 1025px;
+$screen-lg: 1200px;
+
+// Custom helpers
+.border-bottom-green {
+  border-bottom: 1px solid #14805e;
+}
+
+.hero-dark-background {
+  background-color: #343a40;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}
+
+.mbb-list {
+
+}
+
+// Layout
+.container-sm {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+
+.col-sm-4, .col-sm-8, .col-sm-6, .col-md-3, .col-6 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.col-sm-4, .col-sm-8, .col-sm-6 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-12 {
+  flex: 0 0 100%;
+  max-width: 100%;
+}
+
+@media (min-width: $screen-xs) {
+  .col-sm-8 {
+    flex: 0 0 66.666667%;
+    max-width: 66.666667%;
+  }
+
+  .col-sm-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+  }
+
+  .col-sm-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (min-width: $screen-sm) {
+  .col-md-3 {
+    flex: 0 0 25%;
+    max-width: 25%;
+  }
+
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+// Mobile Nav
+.mobile-nav {
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  background: #ffffff;
+  display: flex;
+  height: 50vh;
+  width: 100%;
+  z-index: 2;
+
+  @media (max-width: $screen-sm) {
+    height: 100vh;
+  }
+}
+
+// Blog
+.article-body {
+  width: 100%;
+
+  p {
+    margin-bottom: 10px;
+  }
+
+  h2, ul, h3 {
+    margin: 25px 0;
+  }
+
+  h2, h3 {
+    font-weight: 600;
+  }
+
+  ul {
+    padding-inline-start: 15px;
+
+    li {
+      display: flex;
+      align-items: baseline;
+
+      &:before {
+        content: ' \25B6';
+        color: #14805e;
+        border-color: #14805e;
+        margin-right: 10px;
+      }
+
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+    }
+  }
+}
+
+// Bonus Table
+.bonus-table {
+  .bonus-header {
+    justify-content: space-between;
+    align-items: center;
+    background: #d6d6d6;
+    padding: 20px 40px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 4px;
+    margin: 0;
+  }
+
+  .bookies-bonus {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 20px 30px;
+    margin: 5px 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+// Landing legal pages
+.landing-legal-page {
+  p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  h1,
+  h2,
+  h3 {
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+    font-weight: 600;
+  }
+
+  ul {
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0;
+    margin-inline-end: 0;
+    padding-inline-start: 40px;
+    unicode-bidi: isolate;
+    margin-bottom: 1rem;
+    margin-top: 0;
+  }
+}
+
+// Bookies
+.rating-card {
+  .card-header-image {
+    width: auto;
+    height: 100px;
+    margin: 0 auto -50px;
+    position: relative;
+    z-index: 1;
+
+    img {
+      padding: 0 10px;
+      margin: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      background: #f8fafc;
+    }
+  }
+
+  .card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1.25rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-clip: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    border-radius: 0.25rem;
+
+    .card-overview {
+      text-align: center;
+      padding: 60px 30px 20px;
+    }
+  }
+
+  .average-rating {
+    justify-content: center;
+  }
+}
+
+.bookie-landing {
+  .welcome-box {
+    .welcome-bonus-fist {
+      padding: 25px 10px;
+      color: #fff;
+
+      .terms {
+        font-size: 10px;
+        color: #8f8f8f;
+        line-height: 14px;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  .description-body {
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: bold;
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 20px;
+    }
+
+    ul {
+      display: block;
+      list-style-type: disc;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+      padding-inline-start: 40px;
+      unicode-bidi: isolate;
+
+      li {
+        font-size: 15px;
+        //color: #6c757d !important;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  .bonus-description {
+    p {
+      margin-bottom: 10px;
+    }
+
+    ul {
+      padding-inline-start: 15px;
+
+      li {
+        &:before {
+          content: ' \25B6';
+          color: #14805e;
+          border-color: #14805e;
+          margin-right: 5px;
+        }
+
+        margin-bottom: 10px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+
+  .offer-promo {
+    ul {
+      display: block;
+      list-style-type: disc;
+      margin-block-start: 1em;
+      margin-block-end: 1em;
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+      padding-inline-start: 40px;
+      unicode-bidi: isolate;
+
+      li {
+        font-size: 15px;
+        color: #6c757d !important;
+      }
+    }
+
+    figure.table {
+      width: 100%;
+    }
+
+    table {
+      border-collapse: collapse;
+      border-spacing: 2px;
+      border-color: gray;
+      width: 100%;
+      margin-bottom: 1rem;
+      color: #212529;
+
+      thead tr {
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+
+      tr {
+        &:hover {
+          color: #212529;
+          background-color: rgba(0, 0, 0, 0.075);
+        }
+
+        &:nth-of-type(even) {
+          background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        th {
+          text-align: left;
+        }
+      }
+    }
+
+    .offers-body-description {
+      h1, h2, h3, h4, h5, h6 {
+        font-weight: bold;
+        font-size: 1.1rem;
+        margin-bottom: 15px;
+      }
+
+      p {
+        margin-bottom: 20px;
+      }
+
+      ul, ol {
+        display: block;
+        list-style-type: disc;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0;
+        margin-inline-end: 0;
+        padding-inline-start: 40px;
+        unicode-bidi: isolate;
+
+        li {
+          font-size: 15px;
+          color: #6c757d !important;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "name": "mybetbible",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix"
+  },
+  "dependencies": {
+    "@nuxt/eslint": "^0.7.1",
+    "@nuxt/image": "^1.8.1",
+    "@nuxtjs/google-fonts": "^3.2.0",
+    "@nuxtjs/seo": "^2.0.0-rc.23",
+    "@nuxtjs/tailwindcss": "^6.12.2",
+    "@pinia/nuxt": "^0.7.0",
+    "nuxt": "^3.14.1592",
+    "nuxt-mdi": "^2.1.1",
+    "nuxt-rating": "^0.1.5",
+    "pinia": "^2.2.6",
+    "qs": "^6.13.1",
+    "vue": "latest",
+    "vue-router": "latest"
+  },
+  "devDependencies": {
+    "@stylistic/eslint-plugin-ts": "^2.11.0",
+    "@types/qs": "^6.9.17",
+    "@typescript-eslint/eslint-plugin": "^8.15.0",
+    "@typescript-eslint/parser": "^8.15.0",
+    "sass": "^1.81.0",
+    "sass-loader": "^16.0.3"
+  },
+  "overrides": {
+    "vue": "latest"
+  }
+}
