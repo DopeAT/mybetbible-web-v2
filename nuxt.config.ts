@@ -37,7 +37,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       dev: process.env.NODE_ENV !== 'production',
-      strapiUrl: process.env.NODE_ENV !== 'production' ? `http://localhost:1337` : '`https://api.mybetbible.com`',
+      strapiUrl: process.env.NODE_ENV !== 'production' ? `http://localhost:1337` : `https://api.mybetbible.com`,
       appNodeEnv: process.env.NODE_ENV
     }
   },
