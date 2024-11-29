@@ -267,12 +267,14 @@ useHead({
     <hr class="my-5 divide-y-5">
 
     <div class="faqs-section my-12">
-      <mbb-accordion
-        v-for="faq in faqs"
-        :key="faq.question"
-        accordion-class="max-w-2xl"
-        :item="faq"
-      />
+      <client-only>
+        <mbb-accordion
+          v-for="faq in faqs"
+          :key="faq.question"
+          accordion-class="max-w-2xl"
+          :item="faq"
+        />
+      </client-only>
     </div>
 
     <!--    <div class="flex align-middle justify-center mb-5"> -->
