@@ -1,5 +1,29 @@
 <script setup lang="ts">
+import type { MdiIconString } from 'nuxt-mdi/dist/runtime/components/MdiIcon'
+import { socials } from '~/constants'
 
+const pages = [
+  { title: 'Sport Bonus Offers', link: '/sports-bonus-offers' },
+  { title: 'Betting Sites UK', link: '/betting-sites-uk' },
+  { title: 'Casino Offers', link: '/casino-bonus-offers' },
+  { title: 'Free Bets', link: '/free-bets' },
+  { title: 'Poker Offers', link: '/poker-bonus-offers' },
+  { title: 'Slots', link: '/casino-bonus-offers' }
+]
+
+const legal = [
+  { title: 'Privacy', link: '/privacy' },
+  { title: 'Terms of Use', link: '/terms-of-use' },
+  { title: 'Cookies', link: '/cookies-policy' }
+]
+
+const network = [
+  { title: `Facebook`, icon: 'mdiFacebook', link: `https://www.facebook.com/${socials.FACEBOOK}`, mdi: true },
+  { title: 'Instagram', icon: 'mdiInstagram', link: `https://www.instagram.com/${socials.INSTAGRAM}`, mdi: true }
+  // { title: 'Threads', icon: '/threads.svg', link: 'https://www.threads.net/', mdi: false },
+  // { title: 'Tiktok', icon: '/icons8-tiktok-24.png', link: 'https://www.tiktok.com/', mdi: false },
+  // { title: 'X', icon: '/icons8-twitterx-24.png', link: 'https://x.com/', mdi: false }
+]
 </script>
 
 <template>
@@ -8,52 +32,16 @@
       <div class="row">
         <div class="col-md-3 col-6">
           <ul class="text-white list-none">
-            <li class="p-sm-0 p-1">
+            <li
+              v-for="page in pages"
+              :key="`footer-${page.link}`"
+              class="p-sm-0 p-1"
+            >
               <nuxt-link
-                to="/sports-bonus-offers"
+                to="page.link"
                 class="hover:underline"
               >
-                Sport Bonus Offers
-              </nuxt-link>
-            </li>
-            <li class="p-sm-0 p-1">
-              <nuxt-link
-                to="/betting-sites-uk"
-                class="hover:underline"
-              >
-                Betting Sites UK
-              </nuxt-link>
-            </li>
-            <li class="p-sm-0 p-1">
-              <nuxt-link
-                to="/casino-bonus-offers"
-                class="hover:underline"
-              >
-                Casino Offers
-              </nuxt-link>
-            </li>
-            <li class="p-sm-0 p-1">
-              <nuxt-link
-                to="/free-bets"
-                class="hover:underline"
-              >
-                Free Bets
-              </nuxt-link>
-            </li>
-            <li class="p-sm-0 p-1">
-              <nuxt-link
-                to="/poker-bonus-offers"
-                class="hover:underline"
-              >
-                Poker Offers
-              </nuxt-link>
-            </li>
-            <li class="p-sm-0 p-1">
-              <nuxt-link
-                to="/casino-bonus-offers"
-                class="hover:underline"
-              >
-                Slots
+                {{ page.title }}
               </nuxt-link>
             </li>
           </ul>
@@ -62,26 +50,12 @@
           <ul class="text-white list-none">
             <li class="p-sm-0 p-1">
               <nuxt-link
-                to="/privacy"
+                v-for="page in legal"
+                :key="`footer-${page.link}`"
+                :to="page.link"
                 class="hover:underline"
               >
-                Privacy
-              </nuxt-link>
-            </li>
-            <li class="p-sm-0 p-1">
-              <nuxt-link
-                to="/terms-of-use"
-                class="hover:underline"
-              >
-                Terms of Use
-              </nuxt-link>
-            </li>
-            <li class="p-sm-0 p-1">
-              <nuxt-link
-                to="/cookies-policy"
-                class="hover:underline"
-              >
-                Cookies
+                {{ page.link }}
               </nuxt-link>
             </li>
           </ul>
@@ -141,36 +115,23 @@
           </div>
           <div class="flex justify-center items-center">
             <a
-              href="https://www.facebook.com/Mybetbible-178342054278713"
+              v-for="(social, index) in network"
+              :key="`social-${social.title}`"
+              :href="social.link"
               target="_blank"
-              title="Facebook"
+              :title="social.title"
               class="follow-icon"
             >
               <mbb-icon
-                icon="mdiFacebook"
-                class="mr-3 text-white"
-              />
-            </a>
-            <a
-              href="https://www.facebook.com/Mybetbible-178342054278713"
-              target="_blank"
-              title="Facebook"
-              class="follow-icon"
-            >
-              <mbb-icon
-                icon="mdiTwitter"
-                class="mr-3 text-white"
-              />
-            </a>
-            <a
-              href="https://www.facebook.com/Mybetbible-178342054278713"
-              target="_blank"
-              title="Facebook"
-              class="follow-icon"
-            >
-              <mbb-icon
-                icon="mdiInstagram"
+                v-if="social.mdi"
+                :icon="social.icon as MdiIconString"
                 class="text-white"
+                :class="{ 'mr-3': index > network.length - 1 }"
+              />
+
+              <lazy-nuxt-img
+                v-else
+                :src="social.icon"
               />
             </a>
           </div>
